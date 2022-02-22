@@ -1,3 +1,5 @@
+This project is a weather app used to display the location of an area that the user puts in. This was made with React.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
