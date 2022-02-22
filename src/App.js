@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Input from './components/Input.js';
+import Weather from './components/Weather.js';
+import Forecast from './components/Forecast.js';
+import './components/index.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App()
+{
+    const [word, setWord] = useState('');
+    
+    const handleInput = (event) => {
+        setWord(event.target.value.toLowerCase());
+    }
+
+    return(
+        <div className="container">
+            <div className="wrapper">
+                <Input value={word} handleInput={handleInput}/>
+                <Weather city={word}/>
+                <Forecast city={word}/>
+            </div>
+        </div>
+    );
 }
-
-export default App;
